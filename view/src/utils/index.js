@@ -1,6 +1,6 @@
 export const fetchExpenses = async (date) => {
   const selectDate = new Date(date).getTime() || new Date().getTime();
-  const res = await fetch(`/api/expense/list/${selectDate}`);
+  const res = await fetch(`/api/expenses/list/${selectDate}`);
   return res.json();
 };
 
@@ -16,7 +16,7 @@ export const resHandler = async (res, status) => {
 };
 
 export const createExpense = async (data) => {
-  const res = await fetch(`/api/expense/create`, {
+  const res = await fetch(`/api/expenses`, {
     method: 'POST',
     body: data,
   });
@@ -24,7 +24,7 @@ export const createExpense = async (data) => {
 };
 
 export const updateExpense = async (_id, data) => {
-  const res = await fetch(`/api/expense/${_id}`, {
+  const res = await fetch(`/api/expenses/${_id}`, {
     method: 'PUT',
     body: data,
   });
@@ -32,12 +32,12 @@ export const updateExpense = async (_id, data) => {
 };
 
 export const fetchExpense = async (_id) => {
-  const res = await fetch(`api/expense/${_id}`);
+  const res = await fetch(`/api/expenses/${_id}`);
   return res.json();
 };
 
 export const deleteExpense = async (_id) =>
-  fetch(`api/expense/${_id}`, {
+  fetch(`/api/expenses/${_id}`, {
     method: 'DELETE',
   });
 
