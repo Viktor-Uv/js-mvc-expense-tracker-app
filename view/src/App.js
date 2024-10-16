@@ -42,7 +42,7 @@ function App() {
                 setSelectDate(newValue);
                 // update view from model w/ controller
                 fetchExpenses(newValue.getTime())
-                  .then((res) => setExpenses((res)));
+                  .then((res) => setExpenses(res));
               }}
               slotProps={{ textField: { variant: 'outlined' } }}
             />
@@ -86,7 +86,7 @@ function App() {
           expenses={expenses}
           refreshExpenses={async () => {
             // update view from model w/ controller
-            const res = fetchExpenses(selectDate.getDate());
+            const res = await fetchExpenses(selectDate.getDate());
             setExpenses(res);
           }}
           _id={id}
