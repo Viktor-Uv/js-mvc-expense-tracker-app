@@ -25,6 +25,7 @@ exports.create = (req, res) => {
     }
   });
 };
+
 exports.update = (req, res) => {
   const form = new formidable.IncomingForm();
   const id = Number(req.params.id);
