@@ -1,6 +1,6 @@
 export const fetchExpenses = async (date) => {
   const selectDate = new Date(date).getTime() || new Date().getTime();
-  const res = await fetch(`/api/expenses/list/${selectDate}`);
+  const res = await fetch(`/api/expenses?expenseDate=${selectDate}`);
   return res.json();
 };
 
