@@ -1,6 +1,8 @@
+const API_ENDPOINT = "http://localhost:8000/api";
+
 export const fetchExpenses = async (date) => {
   const selectDate = new Date(date).getTime() || new Date().getTime();
-  const res = await fetch(`/api/expenses?expenseDate=${selectDate}`);
+  const res = await fetch(`${API_ENDPOINT}/expenses?expenseDate=${selectDate}`);
   return res.json();
 };
 
@@ -16,7 +18,7 @@ export const resHandler = async (res, status) => {
 };
 
 export const createExpense = async (data) => {
-  const res = await fetch(`/api/expenses`, {
+  const res = await fetch(`${API_ENDPOINT}/expenses`, {
     method: 'POST',
     body: data,
   });
@@ -24,7 +26,7 @@ export const createExpense = async (data) => {
 };
 
 export const updateExpense = async (_id, data) => {
-  const res = await fetch(`/api/expenses/${_id}`, {
+  const res = await fetch(`${API_ENDPOINT}/expenses/${_id}`, {
     method: 'PUT',
     body: data,
   });
@@ -32,12 +34,12 @@ export const updateExpense = async (_id, data) => {
 };
 
 export const fetchExpense = async (_id) => {
-  const res = await fetch(`/api/expenses/${_id}`);
+  const res = await fetch(`${API_ENDPOINT}/expenses/${_id}`);
   return res.json();
 };
 
 export const deleteExpense = async (_id) =>
-  fetch(`/api/expenses/${_id}`, {
+  fetch(`${API_ENDPOINT}/expenses/${_id}`, {
     method: 'DELETE',
   });
 
