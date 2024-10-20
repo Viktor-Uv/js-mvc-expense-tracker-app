@@ -1,5 +1,6 @@
 // require express and it's router component
 const express = require('express');
+const path = "/expenses";
 
 const router = express.Router();
 
@@ -14,18 +15,18 @@ const {
 } = require('../controllers');
 
 // Create POST route to create an expense
-router.post("/", create);
+router.post(path + "/", create);
 
 // Create GET route to read an expense
-router.get("/:id", expenseById, read);
+router.get(path + "/:id", expenseById, read);
 
 // Create PUT route to update an expense
-router.put("/:id", expenseById, update);
+router.put(path + "/:id", expenseById, update);
 
 // Create DELETE route to remove an expense
-router.delete("/:id", remove);
+router.delete(path + "/:id", remove);
 
 // Create GET route to read a list of expenses
-router.get("/list/:expenseDate", expenseByDate, read);
+router.get(path + "/", expenseByDate, read);
 
 module.exports = router;

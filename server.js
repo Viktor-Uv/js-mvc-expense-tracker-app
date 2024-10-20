@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.API_PORT || 8000;
 
 // route middlewares
-app.use('/api/expenses', expenseRoutes);
+app.use('/api', expenseRoutes);
 app.listen(port, () => {
   // eslint-disable-next-line no-console
   console.log(`App listening at http://localhost:${port}`);
