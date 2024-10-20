@@ -4,7 +4,7 @@ const expenseRoutes = require('./routes/expense');
 
 // Running express server
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.API_PORT || 8000;
 
 // route middlewares
 app.use('/api/expenses', expenseRoutes);
