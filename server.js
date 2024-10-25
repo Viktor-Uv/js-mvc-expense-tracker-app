@@ -17,5 +17,4 @@ app.use(express.urlencoded({ extended: false }));
 // route middlewares
 app.use('/api', expenseRoutes);
 
-const host = app.host;
 app.listen(port);
